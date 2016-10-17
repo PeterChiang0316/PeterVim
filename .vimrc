@@ -60,4 +60,9 @@ nnoremap <C-d> za
 "set color scheme
 "colorscheme monokai
 colorscheme evening
+"colorscheme desert
+
+"use molokai with monokai's bg color
+"let g:molokai_original = 1
+
 
