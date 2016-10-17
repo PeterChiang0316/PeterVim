@@ -1,10 +1,14 @@
 syntax on
+syntax enable
 
 " Always show the current position
 set ru
 
 " Show the line number
 set number
+
+"show cursor line, column, percentage
+set ruler
 
 " highlight the search result
 set hls
@@ -53,5 +57,7 @@ nnoremap <C-c> zo
 nnoremap <C-v> zc
 nnoremap <C-d> za
 
-
+"set color scheme
+"colorscheme monokai
+colorscheme evening
 
