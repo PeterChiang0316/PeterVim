@@ -66,3 +66,18 @@ colorscheme evening
 "let g:molokai_original = 1
 
 
+execute pathogen#infect()
+call pathogen#helptags()
+
+
+"Nerdtree-related
+"auto close if nerd tree is the only window left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"map a key to open Nerdtree
+nnoremap <C-f> :NERDTreeToggle<CR>
+
+"open NERDTree automatically when vim stars up
+autocmd vimenter * NERDTree
+
+
