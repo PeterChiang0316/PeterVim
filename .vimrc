@@ -63,8 +63,8 @@ colorscheme evening
 "colorscheme desert
 
 "use molokai with monokai's bg color
-"let g:molokai_original = 1
-
+let g:molokai_original = 1
+let g:rehash256 = 1
 
 execute pathogen#infect()
 call pathogen#helptags()
@@ -74,10 +74,26 @@ call pathogen#helptags()
 "auto close if nerd tree is the only window left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+"Make NERDTree panel on the right side
+let NERDTreeWinPos="right"
+
 "map a key to open Nerdtree
 nnoremap <C-f> :NERDTreeToggle<CR>
 
+
 "open NERDTree automatically when vim stars up
 autocmd vimenter * NERDTree
+
+"auto focus on files when opening NERDTree
+autocmd vimenter * wincmd p
+
+"Tagbar related
+nnoremap <F8> :TagbarToggle<CR>
+let tagbar_left=1
+
+"ctag related
+
+"cscope related
+
 
 
