@@ -57,10 +57,13 @@ nnoremap <C-c> zo
 nnoremap <C-v> zc
 nnoremap <C-d> za
 
+set t_Co=256
+
 "set color scheme
 "colorscheme monokai
-colorscheme evening
+"colorscheme evening
 "colorscheme desert
+colorscheme peter
 
 "use molokai with monokai's bg color
 let g:molokai_original = 1
@@ -92,8 +95,20 @@ nnoremap <F8> :TagbarToggle<CR>
 let tagbar_left=1
 
 "ctag related
-
+set tags=tags;
 "cscope related
+"automatic set cscope DB path
+function! LoadCscope()
+  let db = findfile("cscope.out", ".;")
+  if (!empty(db))
+    let path = strpart(db, 0, match(db, "/cscope.out$"))
+    set nocscopeverbose " suppress 'duplicate connection' error
+    exe "cs add " . db . " " . path
+    set cscopeverbose
+  endif
+endfunction
+au BufEnter /* call LoadCscope()
 
+let g:loaded_youcompleteme = 1
 
 
